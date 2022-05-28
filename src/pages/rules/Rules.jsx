@@ -1,5 +1,6 @@
 import React from 'react'
 import "./rules.css"
+import { Link } from 'react-router-dom'
 
 export const Rules = () => {
   return (
@@ -16,7 +17,7 @@ Each multiple choice question has only one correct answer.</p></li>
                 <span className="font2 text-danger"> WRONG ANSWER</span> .</p>
             </li>
         </ul>
-        <a href="./question/question1.html" className="btn-start">Start Quiz</a>
+      <Link className='btn-start' to="/login"> Start Quiz</Link>
     </div>
 </main>
   )

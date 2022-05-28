@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 // import HeroImg from "../../assets/svg/heroImg.svg"
+import painting from "../../assets/images/painting.jpg"
 /* eslint-disable */
 export const Landing = () => {
   return (
@@ -20,28 +21,28 @@ export const Landing = () => {
       <div className="category-wrapper">
         
           <Link to="/rules" className="card-category shadow-box">
-            <img src="./assets/painting.jpg" alt="painting" className="category-image" />
+            <img src={painting} alt="painting" className="category-image" />
             <div className="category-content">
               <h3 className="font3 category-head">Paintings</h3>
               <h4 >1 Quiz</h4>
             </div>
           </Link>
           <Link to="/rules" className="card-category shadow-box">
-            <img src="./assets/painting.jpg" alt="painting" className="category-image" />
+            <img src={painting} alt="painting" className="category-image" />
             <div className="category-content">
               <h3 className="font3 category-head">Paintings</h3>
               <h4 >1 Quiz</h4>
             </div>
           </Link>
           <Link to="/rules" className="card-category shadow-box">
-            <img src="./assets/painting.jpg" alt="painting" className="category-image" />
+            <img src={painting} alt="painting" className="category-image" />
             <div className="category-content">
               <h3 className="font3 category-head">Paintings</h3>
               <h4 >1 Quiz</h4>
             </div>
           </Link>
           <Link to="/rules" className="card-category shadow-box">
-            <img src="./assets/painting.jpg" alt="painting" className="category-image" />
+            <img src={painting} alt="painting" className="category-image" />
             <div className="category-content">
               <h3 className="font3 category-head">Paintings</h3>
               <h4 >1 Quiz</h4>

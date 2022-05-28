@@ -1,5 +1,5 @@
 import { Navbar,Footer } from './components';
-import { Landing ,Rules} from './pages';
+import { Landing ,Rules,Signup,Login} from './pages';
 import './App.css';
 import {Routes,Route} from "react-router-dom"
 
@@ -10,6 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/rules" element={<Rules />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>
