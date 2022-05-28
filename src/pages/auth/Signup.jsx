@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 export const Signup = () => {
     const [isEyeOpen, setOpen] = useState(false);
   return (
-    <div class="auth-wrapper">
-      <h3 class="head">Register Now : </h3>
-      <div class="auth-card">
+    <div className="auth-wrapper">
+      <h3 className="head">Register Now : </h3>
+      <div className="auth-card">
         <form action="signup.html">
           <input
             type="text"
             name="name"
             id="name"
-            class="input-field"
+            className="input-field"
             placeholder="Enter your full name"
             required
           />
@@ -22,7 +22,7 @@ export const Signup = () => {
             type="email"
             name="email"
             id="email"
-            class="input-field"
+            className="input-field"
             placeholder="Enter your email here"
             required
           />
@@ -30,7 +30,7 @@ export const Signup = () => {
             type={isEyeOpen ? "text" : "password"}
             name="password"
             id="sign-pass"
-            class="input-field"
+            className="input-field"
             placeholder="Enter your password here"
             required
           />{" "}
@@ -48,20 +48,20 @@ export const Signup = () => {
           <input
             type="password"
             name="password"
-            class="input-field"
+            className="input-field"
             id="sign-pass-confirm"
             placeholder="Re-type your password"
             required
           />
           <div id="pass-checker-area"></div>
-          <button class="auth-btn reset" type="submit">
+          <button className="auth-btn reset" type="submit">
             Sign Up
           </button>
-          <div class="signin-section">
+          <div className="signin-section">
             Already have an account ?{" "}
-            <u class="signin-btn">
+            <u className="signin-btn">
               {" "}
-              <Link to="/login" class="text-secondary decor-none">
+              <Link to="/login" className="text-secondary decor-none">
                 Login Now
               </Link>
             </u>{" "}
