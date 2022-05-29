@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 export const Navbar = () => {
   return (
@@ -20,10 +21,10 @@ export const Navbar = () => {
       </ul>
     </div>
     <div className="badge-container">
-      <a href="login.html" className="avatar avatar-badge text-primary reset">
+      <Link to="/profile" className="avatar avatar-badge text-primary reset">
         <i className="fa fa-user fa-lg" id="user-icon"></i>
         
-      </a>
+      </Link>
       
         <i className="fas fa-lg fa-moon " id="moon-btn"> </i>
     </div>
