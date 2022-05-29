@@ -54,9 +54,18 @@ export const signinHandler = createAsyncThunk(
   }
 );
 
+
 const authSlice = createSlice({
   name: auth,
   initialState,
+  initialState,
+  reducers:{
+      logout : (state,action) =>{
+          state.currentUser={};
+          SuccessToast("Successfully Logged Out");
+          localStorage.removeItem("user")
+      }
+  },
   extraReducers(builder) {
     builder
       .addCase(loginHandler.fulfilled, (state, action) => {
@@ -87,3 +96,4 @@ const authSlice = createSlice({
 });
 
 export default authSlice.reducer;
+export const { logout } = authSlice.actions;
