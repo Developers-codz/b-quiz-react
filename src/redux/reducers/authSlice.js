@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { SuccessToast,AlertToast } from "../../components";
 
 const initialState = {
   currentUser: {},
@@ -16,10 +17,12 @@ export const loginHandler = createAsyncThunk(
     const { email, password } = details;
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password);
+      SuccessToast("Login Successful")
       console.log(user);
       localStorage.setItem("user",JSON.stringify(user ? user : null))
       return user;
     } catch (error) {
+      AlertToast("Incorrect password or email")
       console.log(error);
     }
   }
@@ -36,6 +39,7 @@ export const signinHandler = createAsyncThunk(
         password
       );
       console.log(user);
+      SuccessToast("Signup Successful")
       createUserDocument(user,{
           email:user.email,
           id:user.id,
@@ -44,6 +48,7 @@ export const signinHandler = createAsyncThunk(
       localStorage.setItem("user",JSON.stringify(user ? user : null))
       return user
     } catch (error) {
+      AlertToast("Error while signing up, please try again!!")
       console.log(error);
     }
   }
@@ -62,6 +67,9 @@ const authSlice = createSlice({
       .addCase(loginHandler.pending, (state) => {
         state.authenticating = true;
       })
+      .addCase(loginHandler.rejected,(state,action)=>{
+        console.log(action.payload.error)
+      })
 
       .addCase(signinHandler.pending, (state) => {
         state.authenticating = true;
@@ -69,7 +77,12 @@ const authSlice = createSlice({
       .addCase(signinHandler.fulfilled, (state, action) => {
         state.currentUser = action.payload;
         state.authenticating = false;
+      })
+      .addCase(signinHandler.rejected, (state,action) =>{
+        console.log(action.payload.error)
       });
+      
+     
   },
 });
 

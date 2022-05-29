@@ -17,7 +17,7 @@ Each multiple choice question has only one correct answer.</p></li>
                 <span className="font2 text-danger"> WRONG ANSWER</span> .</p>
             </li>
         </ul>
-      <Link className='btn-start' to="/login"> Start Quiz</Link>
+      <Link className='btn-start' to="/"> Start Quiz</Link>
     </div>
 </main>
   )

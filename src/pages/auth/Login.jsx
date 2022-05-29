@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { loginHandler } from "../../redux/reducers/authSlice";
 import { useDispatch,useSelector } from "react-redux";
+import { AlertToast } from "../../components";
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -15,10 +16,14 @@ export const Login = () => {
   const submitHandler = (e) =>{
     e.preventDefault();
     if(details.email === "" || details.password === ""){
+      AlertToast("Please enter all the fields")
       return;
     }
     dispatch(loginHandler(details))
     setDetails(prev => ({...prev,email:"",password:""}))
+  }
+  const setCredentialHandler = ()=>{
+    setDetails(prev => ({...prev,email:"test@test.com",password:123456}))
   }
   return (
     <div className="auth-wrapper">
@@ -54,7 +59,7 @@ export const Login = () => {
               onClick={() => setOpen(true)}
             ></i>
           )}
-          <button className="demo-login reset">
+          <button className="demo-login reset" onClick={setCredentialHandler}>
             Login With Test Credentials
           </button>
           <button className="auth-btn reset" type="submit" onClick={submitHandler} disabled={authenticating}>

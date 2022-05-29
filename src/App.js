@@ -2,6 +2,7 @@ import { Navbar,Footer,RequireAuth,RestrictRoute } from './components';
 import { Landing ,Rules,Signup,Login} from './pages';
 import './App.css';
 import {Routes,Route} from "react-router-dom"
+import {ToastContainer,toast} from "react-toastify"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
